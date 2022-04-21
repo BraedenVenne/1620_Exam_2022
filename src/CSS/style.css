@@ -143,6 +143,9 @@ footer p {
 
 img {
   border-radius: 50%;
-  color: var(--red);
 }
 
+#card {
+  background-color: var(--red);
+
+}
