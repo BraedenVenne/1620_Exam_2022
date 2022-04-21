@@ -64,6 +64,8 @@ const infoTemp =
     </h1>
   </div>`
 
+const closeBtnTemp = `<button id='closecard'>Close</close>`
+
 // Creates cards for each contact
 function loadContacts() {
   for (const names of contactsList) {
@@ -71,9 +73,9 @@ function loadContacts() {
     if (cardName == '"major" motoko') {
       cardName = 'motoko'
     }
-    const cardTemp = `<img id='card' src='img/${cardName}.png' alt="${cardName}" style='width:10%'>`
+    const cardTemp = `<div id='card'><img id='character-card' src='img/${cardName}.png' alt="${cardName}" style='width:10%'></div>`
     cardSection.insertAdjacentHTML('afterend', cardTemp)
-    const card = document.querySelector('#card')
+    const card = document.querySelector('#character-card')
     card.addEventListener('click', displayContactInfo)
   }
 
@@ -82,7 +84,19 @@ function loadContacts() {
 loadContacts()
 
 
-function displayContactInfo(evt) {
 
-  alert('hi')
+
+function displayContactInfo(evt) {
+  const infoSection = document.querySelector('#card-info')
+  alert('test')
+  cardDiv = closeBtn = document.querySelector('#card')
+  closeBtn = document.querySelector('#closeCard')
+  cardDiv.insertAdjacentHTML('afterend', closeBtnTemp)
+}
+
+
+function closeContact(evt) {
+  if (evt.target.id == 'closeCard') {
+    evt.target.parentElement.remove()
+  }
 }
