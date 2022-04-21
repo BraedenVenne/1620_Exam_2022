@@ -52,3 +52,17 @@ const contactsList = [
 ]
 
 // Your code goes here
+
+const  cardSection = document.querySelector('#display_all_contacts')
+
+function loadContacts() {
+  for (const names of contactsList) {
+    let cardName = names["name"].toLowerCase()
+    const cardTemp = `<img src='img/${cardName}.png' alt="${cardName}" style='width:10%'>`
+    cardSection.insertAdjacentHTML('afterend', cardTemp)
+
+  }
+
+}
+
+loadContacts()
