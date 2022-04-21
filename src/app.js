@@ -88,11 +88,12 @@ loadContacts()
 
 function displayContactInfo(evt) {
   const infoSection = document.querySelector('#card-info')
-  alert('test')
   cardDiv = closeBtn = document.querySelector('#card')
   closeBtn = document.querySelector('#closeCard')
   cardDiv.insertAdjacentHTML('afterend', closeBtnTemp)
+  cardDiv.addEventListener('click', closeContact)
 }
+
 
 
 function closeContact(evt) {
