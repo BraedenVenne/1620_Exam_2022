@@ -54,15 +54,35 @@ const contactsList = [
 // Your code goes here
 
 const  cardSection = document.querySelector('#display_all_contacts')
+const infoSection = document.querySelector('#display_single_contact')
 
+const infoTemp = 
+  `<div id='card-info'>
+    <h1>
+      <p>
+      </p>
+    </h1>
+  </div>`
+
+// Creates cards for each contact
 function loadContacts() {
   for (const names of contactsList) {
-    let cardName = names["name"].toLowerCase()
-    const cardTemp = `<img src='img/${cardName}.png' alt="${cardName}" style='width:10%'>`
+    let cardName = names.name.toLowerCase()
+    if (cardName == '"major" motoko') {
+      cardName = 'motoko'
+    }
+    const cardTemp = `<img id='card' src='img/${cardName}.png' alt="${cardName}" style='width:10%'>`
     cardSection.insertAdjacentHTML('afterend', cardTemp)
-
+    const card = document.querySelector('#card')
+    card.addEventListener('click', displayContactInfo)
   }
 
 }
 
 loadContacts()
+
+
+function displayContactInfo(evt) {
+
+  alert('hi')
+}
